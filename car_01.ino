@@ -1,3 +1,17 @@
+#include <Servo.h> //servo library
+Servo myservo; // create servo object to control servo
+int Echo = A4;
+int Trig = A5;
+int in1 = 9;
+int in2 = 8;
+int in3 = 7;
+int in4 = 6;
+int ENA = 10;
+int ENB = 5;
+int ABS = 50;
+int rightDistance = 0,leftDistance = 0,middleDistance = 0, r=0, m=0, l=0 ;
+int pos = 0;
+
 void loop() {
   myservo.write(80);
  Serial.println("gooooo");
