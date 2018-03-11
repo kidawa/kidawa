@@ -1,0 +1,12 @@
+Objectives:
+Understand what Arduino is, where it come from, what it can be use for.
+Learn basic usage of Arduino microcontroller structure
+Learn how to blink LED on Arduino 
+Learn how to write programs to read sensor input
+Learn how to use python programming language to communicate to Arduino
+Build a basic prototype of distance measure using ultrasonic sensor
+
+Time:
+5 hours
+
+

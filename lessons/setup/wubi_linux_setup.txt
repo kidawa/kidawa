@@ -1,0 +1,34 @@
+March 4 2018
+
+How to install linux 16.04 on windows PC
+
+The following steps works on Windows 7 OS
+
+Start Windows PC
+Open Browser 
+
+Open the following URL and click 
+https://github.com/hakuna-m/wubiuefi/releases
+Wubi for 16.04.4 (rev.329)
+wubi16044r329.exe
+
+This is a small size file, click executable after install
+You may see warning message, you can ignore
+
+On the popup screen, you can  change two places
+The 2nd field at left column, what size of ubuntu install, I select 32 GB, you can choose from 19 to 64 GB
+The last 2 fields at right bottom columns for administrator password, type twicewith same password, you need this to login
+
+Click install, it will take between 30 minutes to 1 hour or so depending on Internet connection, all Ubuntu software packages will be downloaded now
+
+After installation, click Reboot now to check installation.
+
+##
+After reboot Windows you will see two boot options, select ubuntu
+Press key letter "e" to edit boot loader
+Go line below, change "ro" to "rw"
+Press key F10, continue boot ubuntu
+At login screen enter password to login
+
+
+
