@@ -1,0 +1,50 @@
+Requirement:
+Arduino uno board
+Arduino IDE 
+USB cable
+
+Lesson:
+Connect arduino board to PC usb port
+  make sure led light is on next to "on"
+  this shows arduino board is working
+
+Open arduino IDE
+  click arduino IDE icon and open integrated development environment
+  you will see a window, click Help, About Arduino to see version
+
+Create new file
+File, New, or Control + N
+  type the following 
+
+// code start
+int led = 13;
+
+void setup(){
+  Serial.begin(9600);
+  pinMode(led, OUTPUT);
+}
+
+void loop(){
+  Serial.println("Led blnik start");
+  digitalWrite(led, HIGHT);
+  delay(1000);
+  digitalWrite(led, LOW);
+  delay(1000);
+  Serial.println("Led blnik start");
+}
+
+// code end
+
+Check output
+  you can see arduino board digital pin 13 led blinking every one second
+  
+
+Extra step
+  change delay(1000) to
+  delay(5000)
+
+  this changes led blink time interval to 5 seconds
+  led light stay 5 seconds
+  led shut off 5 seconds
+
+ 

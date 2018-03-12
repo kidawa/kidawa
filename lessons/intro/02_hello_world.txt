@@ -1,0 +1,39 @@
+Requirement:
+Arduino uno board
+Arduino IDE 
+USB cable
+
+Lesson:
+Connect arduino board to PC usb port
+  make sure led light is on next to "on"
+  this shows arduino board is working
+
+Open arduino IDE
+  click arduino IDE icon and open integrated development environment
+  you will see a window, click Help, About Arduino to see version
+
+Create new file
+File, New, or Control + N
+  type the following 
+
+void setup(){
+  Serial.begin(9600);
+}
+
+void loop(){
+  Serial.println("Hello World."); 
+}
+
+
+Upload to arduino board
+  click Tools, Board, select Arduino uno
+  click Tools, Serial Port, make sure port is checked, this is connection between PC and arduino board
+  click -> arrow, or File, Upload
+  You will see "Compiling..., Uploading ..., Done uploading"
+
+
+How to check result
+  click Tools, Serial Monitor
+  You see "Hello world" printing on console
+  Window title is "/dev/ttyACM1"
+ 

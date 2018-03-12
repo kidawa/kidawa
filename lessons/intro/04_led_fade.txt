@@ -1,0 +1,55 @@
+Requirement:
+Arduino uno board
+Arduino IDE 
+USB cable
+
+Lesson:
+Connect arduino board to PC usb port
+  make sure led light is on next to "on"
+  this shows arduino board is working
+
+Open arduino IDE
+  click arduino IDE icon and open integrated development environment
+  you will see a window, click Help, About Arduino to see version
+
+Create new file
+File, New, or Control + N
+  type the following 
+
+// code start
+
+int led = 9;   // use pin with ~ sign, this uses PWM (pulse width modulation)
+int brightness = 0;   // start with 0 value
+int fadeAmount = 5;   // incremental value
+
+void setup(){
+  pinMode(led, OUTPUT); 
+}
+
+void loop(){
+  analogWrite(led, brightness);    // set brightness value on pin 9
+ 
+  brightness = brightness + fadeAmount;
+ 
+  if (brightness <=0 || brightness >= 255) {
+    fadeAmount = -fadeAmount;     // change value to negative or positive to reverse brigthness
+  } 
+  
+  delay(30);
+}
+
+// code end
+
+Check output
+  you can see arduino board digital pin 13 led blinking every one second
+  
+
+Extra step
+  change delay(1000) to
+  delay(5000)
+
+  this changes led blink time interval to 5 seconds
+  led light stay 5 seconds
+  led shut off 5 seconds
+
+ 

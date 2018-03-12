@@ -1,0 +1,119 @@
+Requirement:
+Arduino uno board
+Arduino IDE 
+USB cable
+Jumper wires
+Ultra sonic sensor (HR-SR04, up to 3 meters accuracy) 
+Objective:
+Use ultrasonic to gauge distance using "ping" sensor
+
+Hardware:
+HR-SR04 is very simple and useful ultrasonic sensor
+There are 4 pins: 
+  VCC
+  Trig (signal output pin)
+  Echo (signal input pin)
+  GND 
+
+Note: Due to objects and surfaces around in a cone of 90 degrees between sensor and objects, measure may not be accurate.
+
+Lesson:
+Connect HR-SR04 to arduino board 
+  VCC to 5V
+  GND to GND
+  Trig to ping 12
+  Echo to ping 13
+
+####
+speed of sound = measured distance / time on computer
+average sound of speed is:
+air 343 m/s
+water 1493 m/s
+steel 5130 m/s
+
+// code begin - A
+const int out = 12;   // Trig pin
+const int in = 13;    // Echo pin
+
+void setup(){
+  Serial.begin(9600);
+  pinMode(out, OUTPUT);
+  pinMode(in, INPUT); 
+}
+
+void loop(){
+  long dur;
+  long dis;
+ 
+  digitalWrite(out, LOW);   // clear Trig pin
+  delayMicroseconds(2);     // short wait
+  
+  digitalWrite(out, HIGH);  // turn on Trig
+  delayMicroseconds(10);    // short wait 
+  digitalWrite(out, LOW);   // turn off sound wave
+  
+  dur = pulseIn(in, HIGH);  // sound wave reflection time
+  
+  dis = dur / 58.0;
+  
+  Serial.print("duration: ");
+  Serial.print(dur);
+  Serial.print(" distance: ");
+  Serial.println(dis, 1);
+  delay(2000);
+}
+// code end
+
+// code begin - B
+
+#define trigPin 11
+#define echoPin 13
+
+void setup(){
+  Serial.begin(9600);
+  pinMode(trigPin, OUTPUT);
+  pinMode(echoPin, INPUT); 
+}
+
+void loop(){
+  float duration, distance;
+  digitalWrite(trigPin, LOW);
+  delayMicroseconds(2);
+  
+  digitalWrite(trigPin, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(trigPin, LOW);
+ 
+  duration = pulseIn(echoPin, HIGH);
+  distance = (duration / 2) * 0.0344;
+  
+  if (distance >= 400|| distance <= 2) {
+    Serial.print("Distance = ");
+    Serial.println("Out of range");  
+  }
+  else {
+    Serial.print("Distance = ");
+    Serial.print(distance);
+    Serial.println(" cm");
+    delay(50); 
+  }
+  delay(500);
+  
+}
+//
+
+Upload to arduino board
+  click Tools, Board, select Arduino uno
+  click Tools, Serial Port, make sure port is checked, this is connection between PC and arduino board
+  click -> arrow, or File, Upload
+  You will see "Compiling..., Uploading ..., Done uploading"
+
+How to check result
+  click Tools, Serial Monitor
+  You see "Hello world" printing on console
+  Window title is "/dev/ttyACM1"
+ 
+  You can see output on monitor console:
+  .....
+  duration: 3446 distance 58
+  .....

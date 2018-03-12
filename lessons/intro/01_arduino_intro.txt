@@ -1,0 +1,37 @@
+Lesson 00
+
+What is Arduino?
+Open-source electronics platform
+Easy to use hardware and software
+Arduino board 
+  Read input from sensor (light, sound, finger on button, message)
+  Turn into an output (activating motor, turn on LED, send message)
+Use programming language and IDE
+
+Arduino was first created in Italy as an easy tool for fast prototyping helping students without electronics and programming backgrounds
+Now grow a big community and has wide range of products from IoT, wearable, 3D printing, and embedded environments.
+
+Why Arduino?
+Simple, easy
+Support Windows, Linux, Mac
+Low cost
+Good to learn programming and robotics
+Learn new things
+Design your own product and home automation 
+Beginning of career in information technology, programming, robotics, and more
+
+What do you need?
+Personal laptop 
+Arduino board 
+USB cable
+Jump wires 
+Various sensors
+Most important: Desire and ambition
+
+Examples:
+LED light cube
+Home gardening automation
+Motion sensor automation
+Robotic ARMs
+Obstacle avoidance car
+
